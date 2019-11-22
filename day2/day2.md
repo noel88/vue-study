@@ -10,19 +10,23 @@
 
 전역 컴포넌트는 모든 인스턴스에 등록하려면 vue 생성자에서 .component()를 호출하여 수행.
 
-<pre> Vue.component('컴포넌트 이름', {
+<pre> 
+Vue.component('컴포넌트 이름', {
 	//컴포넌트 내용
-  });
+});
+</pre>
 
 <b>지역 컴포넌트 등록</b>
 
 지역 컴포넌트 등록은 전역 컴포넌트 등록과는 다르게 인스턴스에 components 속성을 추가하고 등록할 컴포넌트 이름과 내용을 정의.
 
-<pre> new Vue({
+<pre> 
+new Vue({
     components: {
     	'컴포넌트 이름' : 컴포넌트 내용
     }
-</pre>})
+})
+</pre>
 
 - 컴포넌트 간 통신과 유효 범위
 
@@ -44,6 +48,7 @@
     Vue.component('child-component', {
     	props: ['props 속성이름']
     });
+</pre>
 
 ```vue
 <child-component v-bind:props 속성이름 ="상위 컴포넌트의 data속성"></child-component>
@@ -77,7 +82,7 @@ $emit()을 호출하면 괄호안에 정의된 이벤트가 발생. 일반적으
 
 <b>이벤트 버스 형식</b>
 
-
+<pre>
 	//이벤트 버스를 위한 추가 인스턴스 1개 생성
 	var eventBus = new Vue();
 	
@@ -96,5 +101,5 @@ $emit()을 호출하면 괄호안에 정의된 이벤트가 발생. 일반적으
 			})
 		}
 	}
-
+</pre>
 
